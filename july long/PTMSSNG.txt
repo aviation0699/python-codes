@@ -1,0 +1,22 @@
+from collections import Counter
+for _ in range(int(input())):
+    x=[]
+    y=[]
+    p=q=0
+    for i in range(int(input())*4-1):
+        a,b=map(int,input().split())
+        x.append(a)
+        y.append(b)
+    X=Counter(x)
+    Y=Counter(y)
+    for i in X.keys():
+        if X[i]%2!=0:
+            p=i
+            break 
+    for i in Y.keys():
+        if Y[i]%2!=0:
+            q=i
+            break     
+    print(p,q)    
+        
+    

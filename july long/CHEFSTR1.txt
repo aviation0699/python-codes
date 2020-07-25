@@ -1,0 +1,7 @@
+for _ in range(int(input())):
+    a=int(input())
+    s=0
+    arr=list(map(int,input().split()))
+    for i in range(len(arr)-1):
+        s+=abs(arr[i]-arr[i+1])-1
+    print(s)    

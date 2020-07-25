@@ -1,0 +1,31 @@
+from bisect import bisect
+for _ in range(int(input())):
+    n,x=map(int,input().split())
+    totalDays=0
+    days=0
+    country=list(map(int,input().split()))
+    country.sort()
+    index=bisect(country,x)
+    totalDays2=999999
+    
+    for i in range(index,n,1):
+        while(x < country[i]):
+            x *= 2
+            days+=1
+        days+=1
+        x = 2*country[i]  
+    totalDays = index + days
+    if index >0:
+        days=0
+        index=index-1
+        #print(index)
+        for i in range(index,n,1):
+            while(x < country[i]):
+                x *= 2
+                days+=1
+            days+=1
+            #rint(i)
+            x = 2*country[i]  
+        totalDays2 = index + days
+        
+    print(min(totalDays,totalDays2))    

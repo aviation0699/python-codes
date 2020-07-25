@@ -1,0 +1,37 @@
+from collections import Counter
+for _ in range(int(input())):
+    a=int(input())
+    x=[]
+    x.append("O")
+    for i in range(a-1):
+        x.append(".")
+   # print(len(x))    
+    for i in range(64-a):
+        x.append("X")
+    for i in range(8):
+        print(x[i],end="")
+    print()    
+    for i in range(8,16):
+        print(x[i],end="")
+    print()     
+    for i in range(16,24):
+        print(x[i],end="")
+    print()
+    for i in range(24,32):
+        print(x[i],end="")
+    print()
+    for i in range(32,40):
+        print(x[i],end="")
+    print()
+    for i in range(40,48):
+        print(x[i],end="")
+    print()
+    for i in range(48,56):
+        print(x[i],end="")
+    print()
+    for i in range(56,64):
+        print(x[i],end="")
+    print()    
+    
+        
+    

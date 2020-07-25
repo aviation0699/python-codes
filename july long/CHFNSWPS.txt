@@ -1,0 +1,40 @@
+from collections import OrderedDict
+for T in range(int(input())):
+    n = int(input())
+    arr1 = list(map(int, input().split()))
+    arr2 = list(map(int, input().split()))
+    arr1.sort()
+    arr2.sort()
+    arr1.append(10**9+1)
+    arr2.append(10**9+1)
+    minimum = min(min(arr1),min(arr2))*2
+    n = n+1
+    pairs = []
+    i = 0
+    j = 0
+    while i < n and j < n:
+        if arr1[i] == arr2[j]:
+            i += 1
+            j += 1
+        elif arr1[i] < arr2[j]:
+            pairs.append(arr1[i])
+            i += 1
+        else:
+            pairs.append(arr2[j])
+            j += 1
+    flag = True
+    cost = 0
+    for i in range(0,len(pairs),2):
+        if pairs[i] != pairs[i+1]:
+            flag = False
+            break
+        if i < len(pairs)//2:
+            cost += (min(pairs[i],minimum))
+    if len(pairs)%2 != 0:
+        flag = False
+    if (len(pairs)//2)%2 != 0:
+        flag = False
+    if flag:
+        print(cost)
+    else:
+        print(-1)
