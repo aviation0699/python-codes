@@ -1,0 +1,12 @@
+for _ in range(int(input())):
+    a,b=map(int,input().split())
+    arr=list(map(int,input().split()))
+    f=[]
+    for i in arr:
+        if i%b==0:
+            f.append(1)
+        else:
+            f.append(0)
+    print(''.join(map(str,f)))
+        
+    

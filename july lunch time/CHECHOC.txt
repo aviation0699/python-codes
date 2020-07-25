@@ -1,0 +1,31 @@
+for _ in range(int(input())):
+    n,m,x,y = map(int,input().split())
+    ans=0 
+    if 2*x<=y:
+        ans=n*m*x
+    elif n==1 and m==1:
+        ans=x 
+    elif n==1:
+        if x>y:
+            x=y 
+        ans=y*(m//2)
+        if m%2:
+            ans+=x 
+    else:
+        if x>y:
+            x=y     
+        r1=y*(m//2) 
+        if m%2:
+            r1+=x 
+        r2=y*(m//2) 
+        if m%2:
+            r2+=(y-x)
+        kk=r1    
+        for i in range(n):
+            ans+=kk 
+            if kk==r1:
+                kk=r2 
+            else:
+                kk=r1 
+    print(int(ans))            
+                
