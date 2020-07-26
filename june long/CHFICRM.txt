@@ -1,0 +1,33 @@
+for _ in range(int(input())):
+    a=int(input())
+    arr=list(map(int,input().split()))
+    f,t=0,0
+    r=1
+    for i in arr:
+        if i==5:
+            f+=1
+            
+        elif i==10:
+            t+=1
+            if f>=1:
+                f-=1
+            else:
+                r=0
+                break
+        elif i==15:
+            if t>=1:
+                t-=1
+            elif f>=2 and t==0:
+                f-=2
+            else:
+                r=0
+                break
+                
+    if r:
+        print("YES")
+    else:
+        print("NO")
+                
+      
+        
+    

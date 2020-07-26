@@ -1,0 +1,21 @@
+for _ in range(int(input())):
+    a=int(input())
+    t=[i for i in range(1,a*a+1)]
+    f=[]
+    if a%2==0:
+        k=0
+        for i in range(1,a+1):
+            r=t[k:i*a]
+            if i%2==0:
+                r=r[::-1]
+                f.append(r)
+            else:f.append(r)
+            k=i*a
+    else: 
+        k=0
+        for i in range(1,a+1):  
+            r=t[k:i*a]
+            f.append(r)
+            k=i*a
+    for i in f:
+        print(*i)

@@ -1,0 +1,18 @@
+for _ in range(int(input())):
+    a=int(input())
+    s=a
+    p=0
+    k=0
+    if a%2!=0:
+        print((a-1)//2)
+        continue
+    
+    while a%2==0:
+        p+=1
+        a=a//2
+            
+    y=2**(p+1)
+    r=s%y
+    s=s-r
+    q=(s-y)//y
+    print(q+1)

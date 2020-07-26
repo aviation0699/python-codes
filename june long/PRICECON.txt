@@ -1,0 +1,12 @@
+for _ in range(int(input())):
+    a,b=map(int,input().split())
+    arr=list(map(int,input().split()))
+    r=sum(arr)
+    f=0
+    for i in arr:
+        if i >b:
+            f+=b
+        else:
+            f+=i
+        
+    print(abs(f-r)) 

@@ -1,0 +1,19 @@
+for _ in range(int(input())):
+    e=input()
+    #x,y=[],[]
+    #v=[]
+    t=0
+    visited=[0 for i in range(len(e))]
+    for i in range(len(e)-1):
+        if e[i]=='x'and  visited[i]==0:
+            if e[i+1]=='y':
+                visited[i+1]+=1
+                visited[i]+=1
+                t+=1
+        elif e[i]=='y'and  visited[i]==0:
+            if e[i+1]=='x':
+                visited[i+1]+=1
+                visited[i]+=1
+                t+=1
+                
+    print(t)
